@@ -1,0 +1,67 @@
+
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+.top-bar{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  margin-top: 15px;
+  width: 800px;
+
+  input{
+    width: 725px;
+    padding: 5px;
+  }
+}
+
+
+div.wrap {
+  width: 80%;
+  min-width: 400px;
+  margin: 20px 50px;
+}
+
+
+table {
+  width: 800px;
+  max-width: 1000px;
+
+  thead tr th{
+    &.id{width: 60px;}
+    &.title{width: auto;}
+    &.mark{width: 80px;}
+    &.time{width: 150px;}
+    &.btns{width: 180px;}
+  }
+
+  td.btns{
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 5px;
+  }
+
+  td input{
+   width: 100%;
+  }
+
+  td.is-completed{
+    color: var(--color-yellow);
+    font-weight: bold;
+  }
+
+  td.completed{
+    text-align: center;
+    color: var(--color-green);
+  }
+
+  td.edit{
+    padding: 1px;
+  }
+
+  button.is-info{
+  width: 46px;
+  text-align: center;
+  }
+}

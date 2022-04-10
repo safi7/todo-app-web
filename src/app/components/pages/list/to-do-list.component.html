@@ -1,0 +1,42 @@
+<div class="wrap">
+  <h2 ><i class="fas fa-tasks"></i> To Do List</h2>
+
+  <div class="top-bar">
+    <input type="text" placeholder="Insert title to create new activity" [(ngModel)]="on.title">
+    <button class="button is-primary" (click)="onCreate()">Create</button>
+  </div>
+  <div class="main">
+    <ng-container >
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="id">ID</th>
+              <th class="title">Title</th>
+              <th class="mark">Status</th>
+              <th class="time">Last update</th>
+              <th class="btns"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let each of list.items">
+              <td>
+               {{each.item_id}}
+              </td>
+              <td [ngClass]="{'edit':each.edit} ">
+                <div *ngIf="!each.edit">{{each.title}}</div> 
+               <div *ngIf="each.edit"> <input type="text" (keyup.enter)="onUpdate(each)" [(ngModel)]="each.title"></div>
+              </td>
+              <td class="is-completed" [ngClass]="{completed: each.completed}">{{each.completed?'COMPLETED':'PENDING'}}</td>
+              <td>{{each.updated_at}}</td>
+              <td class="btns">
+                <button class="button is-info" *ngIf="!each.edit" (click)="each.edit=true">Edit</button>
+                <button class="button is-primary" (click)="onUpdate(each)" *ngIf="each.edit">Save</button>
+                <button class="button is-positive" (click)="onCompleted(each)" [disabled]="each.completed">Complete</button>
+                <button class="button is-negative" (click)="onDelete(each)" >Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </ng-container>
+  </div>
+</div>

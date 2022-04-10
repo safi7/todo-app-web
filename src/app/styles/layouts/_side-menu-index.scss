@@ -1,0 +1,64 @@
+// $fa-font-path: '../../../assets/fonts/fontawesome' !default;
+@import 'global/vendor/fontawesome/fontawesome';
+
+label i {
+  @extend .fal;
+  font-weight: 400;
+}
+
+/* ICONS */
+label i.left:before {
+  content: fa-content($fa-var-question-circle);
+}
+
+label.user-permission i.left:before {
+  content: fa-content($fa-var-user-friends);
+}
+
+label.operators i.left:before {
+  content: fa-content($fa-var-city);
+}
+
+label.dictionary i.left:before {
+  content: fa-content($fa-var-books);
+}
+
+label.operation i.left:before {
+  content: fa-content($fa-var-business-time);
+}
+
+label.schedule-odds i.left:before {
+  content: fa-content($fa-var-analytics);
+}
+
+label.setting i.left:before {
+  content: fa-content($fa-var-sliders-v);
+}
+
+label.provider i.left:before {
+  content: fa-content($fa-var-database);
+}
+
+label.reports i.left:before {
+  content: fa-content($fa-var-file-contract);
+}
+
+label.tools i.left:before {
+  content: fa-content($fa-var-wrench);
+}
+
+label.logs i.left:before {
+  content: fa-content($fa-var-fingerprint);
+}
+label.VIP, label.vip i.left:before {
+  content: fa-content($fa-var-user-secret);
+}
+label.cms i.left:before {
+  content: fa-content($fa-var-tasks);
+}
+
+/* STYLING */
+input[type=radio].toggle-hide,
+input[type=checkbox].toggle-hide {
+  display: none;
+}
